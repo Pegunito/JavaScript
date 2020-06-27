@@ -1,29 +1,22 @@
-const workers = [
-  {"name":"John","salary":500},
-  {"name":"Mike","salary":1300},
-  {"name":"Linda","salary":1500}
-];
+const mixedArray = [3,13,74,14,66,15,22,4];
 
-const getWorthyWorkers = (workersArr) => {
+const isEven = num => {
+  return num % 2 == 0;
+}
 
-  const worthyWorkers = [];
+const filterArray = ( arrayToFilter,filterfn ) => {
 
-  workersArr.forEach(currentWorker => {
-    if (currentWorker.salary > 1000) {
-      worthyWorkers.push(currentWorker.name)
-    }
-  })
+const filteredArray = [];
 
-  return worthyWorkers;
+arrayToFilter.forEach(num => {
 
-/*   for (let i = 0; i < workersArr.lenght; i++) {
-    const currentWorker = workersArr[i];
+  if (filterfn(num)){
+    filteredArray.push(num);
+  }
+})
 
-    if (currentWorker.salary > 1000) {
-      worthyWorkers.push(currentWorker.name);
-    }
-  } */
+return filterArray;
 
 }
 
-console.log(getWorthyWorkers(workers));
+console.log(filterArray(mixedArray, isEven));
