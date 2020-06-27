@@ -8,15 +8,22 @@ const getWorthyWorkers = (workersArr) => {
 
   const worthyWorkers = [];
 
-  for (let i = 0; i < workersArr.lenght; i++) {
+  workersArr.forEach(currentWorker => {
+    if (currentWorker.salary > 1000) {
+      worthyWorkers.push(currentWorker.name)
+    }
+  })
+
+  return worthyWorkers;
+
+/*   for (let i = 0; i < workersArr.lenght; i++) {
     const currentWorker = workersArr[i];
 
     if (currentWorker.salary > 1000) {
-      worthyWorkers.push(currentWorker);
+      worthyWorkers.push(currentWorker.name);
     }
-  }
+  } */
 
-  return worthyWorkers;
 }
 
 console.log(getWorthyWorkers(workers));
