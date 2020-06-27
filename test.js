@@ -1,7 +1,22 @@
-const string = "Привет, как дела?";
+const mixedArray = [3,13,74,14,66,15,22,4];
 
-const getVowels = stringToFilter => {
-  return stringToFilter;
+const isEven = num => {
+  return num % 2 == 0;
 }
 
-console.log(getVowels(string));
+const filterArray = ( arrayToFilter,filterfn ) => {
+
+const filteredArray = [];
+
+arrayToFilter.forEach(num => {
+
+  if (filterfn(num)){
+    filteredArray.push(num);
+  }
+})
+
+return filterArray;
+
+}
+
+console.log(filterArray(mixedArray, isEven));
